@@ -1,0 +1,102 @@
+\documentclass{beamer}
+\usepackage[UTF8]{ctex}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{bookman}
+\usetheme{Madrid}
+\usepackage{wrapfig}
+\graphicspath{ {./texPic/} }
+%Information to be included in the title page:
+\title{数据安全}
+\author{潘重宇}
+\date{2022/8/8}
+
+\begin{document}
+	
+	\frame{\titlepage}
+	
+	\AtBeginSection[]
+	{
+		\begin{frame}
+			\frametitle{目录}
+			\tableofcontents[currentsection]
+		\end{frame}
+	}
+	
+	\section{数据安全概述}
+	\begin{frame}
+		\frametitle{数据安全概述}
+		\begin{block}{数据是什么}
+			数据，是指任何以电子或者其他方式对信息的记录。
+		\end{block}
+	\begin{block}{数据处理}
+		数据的收集、存储、使用、加工、传输、提供、公开等过程。
+	\end{block}
+	\begin{block}{数据安全}
+		通过采取必要措施，确保数据处于有效保护和合法利用的状态，以及具备保障持续安全状态的能力。
+	\end{block}
+	\quad2021年9月1日，《中华人民共和国数据安全法》正式施行，此项立法进一步确保了数据处于有效保护和合法利用的状态，以更好保护个人和组织的合法权益，维护国家主权、安全和发展利益。
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{数据安全的重要性}
+		\quad
+		网络空间的安全不仅包括网络本身的安全，而且包括数据、信息系统、智能系统、信息物理融合系统等多个方面的广义安全。数据安全是网络空间安全的基础，是国家安全的重要组成部分。数据安全与网络安全、信息安全、系统安全、内容安全和信息物理融合系统安全有着密不可分的关系。
+		\\
+		\quad
+		数据安全与网络安全密切相关，是国家主权、国家安全的重要组成部分。
+	\end{frame}
+	
+	\section{数据安全方案分析}
+	\begin{frame}
+		\frametitle{基于生命周期的数据安全方案}
+		\begin{itemize}
+			\item<1-> 数据采集安全。
+			\item<2-> 数据传输安全。
+			\item<3-> 数据存储安全。
+			\item<4-> 数据处理安全。
+			\item<5-> 数据交换安全。
+			\item<6-> 数据销毁安全。
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{数据采集安全}
+		\begin{block}{数据采集阶段}
+			数据采集阶段是组织内部系统中新产生数据，以及从外部系统收集数据的阶段。如何保证海量数据的安全可治理，是这一阶段的重点。
+		\end{block}
+		\quad
+		需要保护什么数据、这些数据分布在哪里、风险程度如何，对大部分人来说都是企业数据安全管理的盲区。有效掌握所需保护数据的分布，是做好数据安全工作的第一步。
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{数据传输安全}
+		\begin{block}{数据传输阶段}
+			数据传输阶段是数据从一个实体传输到另一个实体的阶段。
+		\end{block}
+		\quad
+		在数据抽取、数据导入、数据共享、数据发布、数据展示和数据下载的过程中，要做好鉴权、加密的工作，防止中间人泄露、篡改数据。
+	\end{frame}
+	
+	\begin{frame}
+	\frametitle{数据存储安全}
+	\begin{block}{数据存储阶段}
+		数据以任何数字格式进行存储的阶段。
+	\end{block}
+	\quad
+	传统介质上做好文件加密和磁盘加密；在数据库、数据中台等结构化存储上做好脱敏、字段加密；在对象类、日志类、缓存类的非结构存储上做好脱敏、客户端加密、服务端加密等安全措施。
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{数据处理安全}
+	\quad
+	对于需要重点处理的数据实现脱敏化处理，确保使用者无从泄露重要数据。
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{监控审计}
+	\quad
+	针对数据生存周期各阶段开展安全监控和审计，以保证对数据的访问和操作均得到有效的监控和审计。基于组织对终端设备层面的数据保护要求，针对组织内部的工作终端采取相应的技术和管理方案，例如采用堡垒机方案。
+	\end{frame}
+	
+\end{document}

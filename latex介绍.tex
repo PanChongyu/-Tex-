@@ -1,0 +1,194 @@
+\documentclass{beamer}
+\usepackage[UTF8]{ctex}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{bookman}
+\usetheme{Madrid}
+\usepackage{listings}
+\usepackage{wrapfig}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+\graphicspath{ {./texPic/} }
+%Information to be included in the title page:
+\title{\LaTeX{}学习记录}
+\author{潘重宇}
+\institute{兴业数金}
+\date{2022/4/26}
+
+\begin{document}
+	
+	\frame{\titlepage}
+	
+	\AtBeginSection[]
+	{
+		\begin{frame}
+			\frametitle{目录}
+			\tableofcontents[currentsection]
+		\end{frame}
+	}
+	
+	\section{\LaTeX{}基础介绍}
+	\begin{frame}
+		\frametitle{\LaTeX{}是什么}
+		\quad
+		\LaTeX{} (发音 LAY-tek 或 LAH-tek) 是一个编辑专业文档的工具。它基于WYSIWYM (what you see is what you mean) 这个想法而出现，这意味着你只要专注于文档内容，编译器会完成排版、样式方面的工作。相比于MS-word这种需要自己在页面上进行繁琐排版的文档编辑工具，\LaTeX{}只需要使用者输入单纯的字符就能自己完成各种工作。
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{为什么学习\LaTeX{}}
+		\quad
+		\LaTeX{}在全世界范围内被用于科学文章、书籍以及其它形式的出版物编辑。这不仅因为它可以用来优雅地排版，还允许使用者进行复杂的样式内容编辑，比如插入图片，创建表格，添加引用参考和配置统一的文本样式。得益于庞大的开源包资源，\LaTeX{}有着无限的拓展可能。
+		\\
+		\quad
+		使用\LaTeX{}的一个重要的理由是\LaTeX{}把文档的内容和样式分割开来。这意味着我们在完成了内容的编辑后可以非常轻易的改变文档的样式。这样就允许我们制作一个专门的样式模板，在日后的文档编辑工作中可以直接导入。
+	\end{frame}
+	
+	\section{使用\LaTeX{}进行编辑}
+	\begin{frame}[fragile]
+		\frametitle{创建第一个\LaTeX{}文档}
+		\quad
+		让我们以一个简单的例子作为开始。输入文件是一个以.tex为结尾的纯文本文件。它包含了计算机能够转译成PDF文档的代码。代码的第一行声明了文档了类型，在这儿类型是article。然后在\verb+\begin{document}+与\verb+\end{document}+之间我们写上了文档的内容。
+\begin{lstlisting}[language=TeX]
+\documentclass{article}
+
+\begin{document}
+First document. This is a simple example,
+with no extra parameters or packages included.
+\end{document}
+\end{lstlisting}
+	\end{frame}
+
+	
+	\begin{frame}[fragile]
+		\frametitle{创建第一个\LaTeX{}文档}
+		\quad
+		只有一段文字的文档显然是不够的。在这一步我们来加上作者、标题和日期并创建一个封面，然后对文档做些许排版。
+\begin{lstlisting}[language=TeX]
+\documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+
+\title{First document}
+\author{Pan \thanks{supported by Wang, Pang}}
+\date{4/26/2022}
+\begin{document}
+
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+In this document some extra packages and parameters
+were added. There is an encoding package
+and pagesize and fontsize parameters.
+
+\end{document}
+\end{lstlisting}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{创建第一个\LaTeX{}文档}
+			我们在TeXstudio里观察一下实现的效果（样例2）
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{选择一个\LaTeX{}编译器}
+		\quad
+		我们把编译.tex文件的程序称为TeX发行版，目前有以下一些保持更新的发行版可供选择。同时还有许多公司和社区提供在线的TeX编译工具，比如Overleaf。
+		\begin{itemize}
+			\item<1-> MiKTeX for Windows
+			\item<2-> TeX Live for Linux and other UNIX-like systems
+			\item<3-> MacTeX redistribution of TeX Live for macOS
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{选择一个\LaTeX{}编辑工具}
+		\quad
+		就像各种集成开发环境，\LaTeX{}也在各类操作系统上有着丰富的高级文本编辑工具，能提供拼写检查、代码补全以及直观的PDF生成预览等功能。同时Emacs和vim也有\LaTeX{}支持插件。
+		\begin{itemize}
+			\item<1-> 开源编辑器：AUCTEX, GNU TeXmacs, Gummi, Kile, LaTeXila, MeWa, TeXShop, TeXnicCenter, Texmaker, TeXstudio, TeXworks
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{\LaTeX{}输出格式}
+		\LaTeX{}有以下几种编译方式
+		\begin{itemize}
+			\item<1-> latex 输出.DVI文件
+			\item<2-> pdflatex 输出.PDF文件
+			\item<3-> XeLaTeX 支持UTF-8的编译方式
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{\LaTeX{}的文档结构}
+		\quad
+		\LaTeX{}里提供的文章结构由大至小为Part，Chapter（仅在文档类型为report和book中存在），Section和Subsection。具体演示见样例3。
+		\\
+		\quad
+		除了默认的文档结构样式，通过引入titlesec包\LaTeX{}可以实现个性化的配置。如以下代码所示，我们能修改Part和Section的表现
+\begin{lstlisting}[language=TeX]
+\titleformat
+{\chapter} % command
+[display] % shape
+{\bfseries\Large\itshape} % format
+{Story No. \ \thechapter} % label
+{0.5ex} % sep
+{
+\rule{\textwidth}{1pt}
+\vspace{1ex}
+\centering
+} % before-code
+[
+\vspace{-0.5ex}%
+\rule{\textwidth}{0.3pt}
+] % after-code
+\end{lstlisting}
+	\end{frame}
+
+	\begin{frame}[fragile]
+		\frametitle{\LaTeX{}的文档结构}
+\begin{lstlisting}[language=TeX]
+\titleformat
+\titleformat{\section}[wrap]
+{\normalfont\bfseries}
+{\thesection.}{0.5em}{}
+
+\titlespacing{\section}{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
+\end{lstlisting}
+	\quad
+		\begin{block}{关于\LaTeX{}的class与package}
+			在进行个性化样式的学习中我们不免会想到，如果在之后的文档编辑中需要再次使用这种样式，能否避免在新的文档代码里嵌入大块复杂的布局参数。答案是可以的。\LaTeX{}提供了名为LaTeX2e的模板工具让使用者能够编写自己的class与package（这两者的区别在于class只能作用于特定的文档类型，而package能在任何地方引用），从而覆盖默认的样式参数或者实现自己的begin-end内容模块样式。
+		\end{block}
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{一些操纵演示}
+		字体，表格，公式，定理，化学结构等。
+	\end{frame}
+	
+\end{document}

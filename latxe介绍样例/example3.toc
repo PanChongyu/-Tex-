@@ -1,0 +1,4 @@
+\contentsline {part}{I\hspace {1em}Part name}{2}{}%
+\contentsline {section}{\numberline {1}Section name}{2}{}%
+\contentsline {subsection}{\numberline {1.1}Subsection name}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Unnumbered subsection name}{2}{}%

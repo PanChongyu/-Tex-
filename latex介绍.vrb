@@ -1,0 +1,13 @@
+\frametitle{\LaTeX{}的文档结构}
+\begin{lstlisting}[language=TeX]
+\titleformat
+\titleformat{\section}[wrap]
+{\normalfont\bfseries}
+{\thesection.}{0.5em}{}
+
+\titlespacing{\section}{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
+\end{lstlisting}
+^^I\quad
+^^I^^I\begin{block}{关于\LaTeX{}的class与package}
+^^I^^I^^I在进行个性化样式的学习中我们不免会想到，如果在之后的文档编辑中需要再次使用这种样式，能否避免在新的文档代码里嵌入大块复杂的布局参数。答案是可以的。\LaTeX{}提供了名为LaTeX2e的模板工具让使用者能够编写自己的class与package（这两者的区别在于class只能作用于特定的文档类型，而package能在任何地方引用），从而覆盖默认的样式参数或者实现自己的begin-end内容模块样式。
+^^I^^I\end{block}

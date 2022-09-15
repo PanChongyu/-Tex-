@@ -1,0 +1,2 @@
+\beamer@sectionintoc {1}{golang介绍}{2}{0}{1}
+\beamer@sectionintoc {2}{golang实际演练}{10}{0}{2}

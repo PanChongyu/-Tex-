@@ -1,0 +1,2 @@
+\beamer@sectionintoc {1}{\LaTeX {}基础介绍}{2}{0}{1}
+\beamer@sectionintoc {2}{使用\LaTeX {}进行编辑}{5}{0}{2}
